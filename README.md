@@ -1,3 +1,4 @@
 # OOP-Database
-Project for the OOP course
+Project for the OOP course, 
+
 Topic 10
