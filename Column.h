@@ -1,22 +1,23 @@
 #ifndef COLUMN_H
 #define COLUMN_H
+#include "IncludeFile.h"
 
+template<typename T>
 class Column
 {
 private:
     char mType;
-    
+    MyVector<T> mData;
+    MyString mName;
+
 public:
     Column(/* args */);
-    ~Column();
+    void Add(const T* data);
+    void Describe();
+    void SetType(char ch);
+    
 };
 
-Column::Column(/* args */)
-{
-}
 
-Column::~Column()
-{
-}
 
 #endif

@@ -5,6 +5,7 @@
 #include <cstring>
 #include <fstream>
 #include "MyString.h"
+#include "MyVector.h"
 using namespace std;
 
 #endif
