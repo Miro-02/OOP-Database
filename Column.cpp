@@ -1,38 +1,94 @@
-#include "IncludeFile.h"
 #include "Column.h"
+#include <iostream>
+
+// template <typename T>
+
+// Column<T>::Column()
+// {
+
+// }
 
 template <typename T>
-void Column<T>::SetType(char ch)
+Column<T>::Column(type type, const std::string &name, const std::vector<T> &vector) : mType(type), mColumn(vector)
 {
-    mType = ch;
+    SetName(name);
 }
 
 template <typename T>
-Column<T>::Column(/* args */)
+Column<T>::Column(type type, const std::string& name) : mType(type)
 {
-    mType = 'n';
-    mData = MyVector<T>();
-    mName = MyString();
+    SetName(name);
+}
+
+template <typename T>
+void Column<T>::SetName(const std::string &name)
+{
+    if(!IsNameGood(name))
+    {
+        throw "Bad name";
+    }
+    mName = name;
+}
+
+// template <typename T>
+// void Column<T>::SetType(type type)
+// {
+//     mType = type;
+// }
+
+template <typename T>
+
+const T *Column<T>::GetAt(unsigned int index) const
+{
+    return mColumn[index];
+}
+
+template <typename T>
+const std::string &Column<T>::GetName() const
+{
+    return mName;
+}
+
+template <typename T>
+type Column<T>::GetType() const
+{
+    return mType;
 }
 
 template <typename T>
 void Column<T>::Add(const T *data)
 {
-    mData.Add(data);
-    cout << "Added successfully" << endl;
+    mColumn.push_back(data);
+    std::cout << "Added successfully" << std::endl;
 }
 
 template <typename T>
-void Column<T>::Describe()
+void Column<T>::Describe() const
 {
-    cout << mName << " : " << mType << " ";
+    std::cout << mName << " : " << mType << std::endl;
 }
+
 template <typename T>
-bool Column<T>::IsValueIn(T data, unsigned int y)
+bool Column<T>::IsValueIn(const T *data) const
 {
-    if(mData[y]==data)
+    for (size_t i = 0; i < mColumn.size(); i++)
     {
-        return true;
+        if (mColumn[i] == data)
+        {
+            return true;
+        }
     }
     return false;
+}
+
+template <typename T>
+void Column<T>::DeleteAt(unsigned int index)
+{
+    mColumn.erase(index);
+}
+
+template <typename T>
+void Column<T>::ChangeAt(unsigned int index, const T *value)
+{
+    mColumn[index] = value;
 }

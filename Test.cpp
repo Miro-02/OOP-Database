@@ -1,9 +1,11 @@
-#include "IncludeFile.h"
-#include "MyVector.h"
+// #include <string>
+// #include <vector>
+// using namespace std;
 
 // int main(int argc, char const *argv[])
 // {
-//     MyVector<unsigned int> vector = MyVector<unsigned int>();
-
+//     vector<string> vector;
+//     vector.push_back("diufhs");
+//     vector[0].compare()
 //     return 0;
 // }
