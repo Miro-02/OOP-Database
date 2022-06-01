@@ -5,10 +5,11 @@
 
 class MyString
 {
-private:
+protected:
     char *mData;
     unsigned int mSize;
     //unsigned int mCapacity;
+private:
     void Free();
     void CreateEmpty();
     void Resize();
@@ -19,7 +20,7 @@ public:
     unsigned int GetSize() const;
     //unsigned int GetCapacity() const;
     const char *GetData() const;
-    void SetData(const char *);
+    void SetData(const char * name);
     MyString();
     MyString(unsigned int);
     MyString(const char *);

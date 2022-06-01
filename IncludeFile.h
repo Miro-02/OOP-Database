@@ -6,6 +6,7 @@
 #include <fstream>
 #include "MyString.h"
 #include "MyVector.h"
+#include "MyName.h"
 using namespace std;
 
 #endif

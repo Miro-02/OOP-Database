@@ -27,3 +27,12 @@ void Column<T>::Describe()
 {
     cout << mName << " : " << mType << " ";
 }
+template <typename T>
+bool Column<T>::IsValueIn(T data, unsigned int y)
+{
+    if(mData[y]==data)
+    {
+        return true;
+    }
+    return false;
+}

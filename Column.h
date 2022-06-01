@@ -8,14 +8,14 @@ class Column
 private:
     char mType;
     MyVector<T> mData;
-    MyString mName;
+    MyName mName;
 
 public:
     Column(/* args */);
     void Add(const T* data);
     void Describe();
-    void SetType(char ch);
-    
+    void SetType(char ch); 
+    bool IsValueIn(T data, unsigned int y);
 };
 
 
